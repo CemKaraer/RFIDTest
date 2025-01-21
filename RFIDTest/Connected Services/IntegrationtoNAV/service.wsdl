@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ExchangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExchangeRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BCCompanyId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZoneCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppVersion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VersionNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FriendlyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SqlType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sql" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BCResource" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCount" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SQLParameterPairs" type="tns:ArrayOfSQLParameterPair" />
+          <s:element minOccurs="1" maxOccurs="1" name="PartitionNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PartitionSet" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Zip" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperationName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Base64EncodedString" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSQLParameterPair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SQLParameterPair" nillable="true" type="tns:SQLParameterPair" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SQLParameterPair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExchangeResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MustUpgrade" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="XAMLInfoDocumentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentTypeInfoName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SQLFieldHeader" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SQLResult" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SQLSingleResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SQLFlatResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SQLZippedResult" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="SQLFieldSeperator" type="s1:char" />
+          <s:element minOccurs="0" maxOccurs="1" name="XAMLContent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JSONResult" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ExchangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogoutResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ExchangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePasswordResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ExchangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SignUpResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ExchangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTableResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSingleResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ExchangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSingleResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSingleResultResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OCRImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ExchangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OCRImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OCRImageResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendtoNAVService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ExchangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendtoNAVServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendtoNAVServiceResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ExchangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnResultResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ExchangeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendRFID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="operationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendRFIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPalletInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="palletNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPalletInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPalletInfoResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignUpSoapIn">
+    <wsdl:part name="parameters" element="tns:SignUp" />
+  </wsdl:message>
+  <wsdl:message name="SignUpSoapOut">
+    <wsdl:part name="parameters" element="tns:SignUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSingleResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSingleResult" />
+  </wsdl:message>
+  <wsdl:message name="GetSingleResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSingleResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="OCRImageSoapIn">
+    <wsdl:part name="parameters" element="tns:OCRImage" />
+  </wsdl:message>
+  <wsdl:message name="OCRImageSoapOut">
+    <wsdl:part name="parameters" element="tns:OCRImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendtoNAVServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:SendtoNAVService" />
+  </wsdl:message>
+  <wsdl:message name="SendtoNAVServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:SendtoNAVServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnResultSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnResult" />
+  </wsdl:message>
+  <wsdl:message name="ReturnResultSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendRFIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SendRFID" />
+  </wsdl:message>
+  <wsdl:message name="SendRFIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SendRFIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPalletInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPalletInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IntegrationtoNAVSoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input message="tns:LogoutSoapIn" />
+      <wsdl:output message="tns:LogoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignUp">
+      <wsdl:input message="tns:SignUpSoapIn" />
+      <wsdl:output message="tns:SignUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTable">
+      <wsdl:input message="tns:GetTableSoapIn" />
+      <wsdl:output message="tns:GetTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleResult">
+      <wsdl:input message="tns:GetSingleResultSoapIn" />
+      <wsdl:output message="tns:GetSingleResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OCRImage">
+      <wsdl:input message="tns:OCRImageSoapIn" />
+      <wsdl:output message="tns:OCRImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendtoNAVService">
+      <wsdl:input message="tns:SendtoNAVServiceSoapIn" />
+      <wsdl:output message="tns:SendtoNAVServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnResult">
+      <wsdl:input message="tns:ReturnResultSoapIn" />
+      <wsdl:output message="tns:ReturnResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendRFID">
+      <wsdl:input message="tns:SendRFIDSoapIn" />
+      <wsdl:output message="tns:SendRFIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletInfo">
+      <wsdl:input message="tns:GetPalletInfoSoapIn" />
+      <wsdl:output message="tns:GetPalletInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntegrationtoNAVSoap" type="tns:IntegrationtoNAVSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUp">
+      <soap:operation soapAction="http://tempuri.org/SignUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTable">
+      <soap:operation soapAction="http://tempuri.org/GetTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleResult">
+      <soap:operation soapAction="http://tempuri.org/GetSingleResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OCRImage">
+      <soap:operation soapAction="http://tempuri.org/OCRImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendtoNAVService">
+      <soap:operation soapAction="http://tempuri.org/SendtoNAVService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnResult">
+      <soap:operation soapAction="http://tempuri.org/ReturnResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendRFID">
+      <soap:operation soapAction="http://tempuri.org/SendRFID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletInfo">
+      <soap:operation soapAction="http://tempuri.org/GetPalletInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IntegrationtoNAVSoap12" type="tns:IntegrationtoNAVSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="http://tempuri.org/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUp">
+      <soap12:operation soapAction="http://tempuri.org/SignUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTable">
+      <soap12:operation soapAction="http://tempuri.org/GetTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleResult">
+      <soap12:operation soapAction="http://tempuri.org/GetSingleResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OCRImage">
+      <soap12:operation soapAction="http://tempuri.org/OCRImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendtoNAVService">
+      <soap12:operation soapAction="http://tempuri.org/SendtoNAVService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnResult">
+      <soap12:operation soapAction="http://tempuri.org/ReturnResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendRFID">
+      <soap12:operation soapAction="http://tempuri.org/SendRFID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetPalletInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IntegrationtoNAV">
+    <wsdl:port name="IntegrationtoNAVSoap" binding="tns:IntegrationtoNAVSoap">
+      <soap:address location="https://mtnav.guzelenerji.com.tr/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IntegrationtoNAVSoap12" binding="tns:IntegrationtoNAVSoap12">
+      <soap12:address location="https://mtnav.guzelenerji.com.tr/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
