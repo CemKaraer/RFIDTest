@@ -17,6 +17,23 @@ namespace RFIDTest
         }
 
         [TestMethod]
+        public void TestIsOrderPosted()
+        {
+            var soapClient = new IntegrationtoNAV.IntegrationtoNAVSoapClient();
+            var apiKey = "Eax^ME_bg@C8Wy9YMB+P";
+            var projectName = "OYAK";
+            var result = soapClient.IsOrderPosted(apiKey, projectName, "106056");
+            // result.JSONResult = [] 
+            // Böyle bir sipariş YOK
+            result = soapClient.IsOrderPosted(apiKey, projectName, "106135");
+            // result.JSONResult = [{"PostedNo":"100719"}] 
+            // Siparişin irsaliyesi KESİLMİŞ
+            result = soapClient.IsOrderPosted(apiKey, projectName, "106139");
+            // result.JSONResult = [{"PostedNo":""}] 
+            // Sipariş var gönderime HAZIR
+        }
+
+        [TestMethod]
         public void TestInBound()
         {
             var soapClient = new IntegrationtoNAV.IntegrationtoNAVSoapClient();

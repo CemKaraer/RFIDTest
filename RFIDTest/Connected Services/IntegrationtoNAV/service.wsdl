@@ -238,6 +238,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="IsOrderPosted">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsOrderPostedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsOrderPostedResult" type="tns:ExchangeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
     <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
       <s:simpleType name="char">
@@ -317,6 +333,12 @@
   <wsdl:message name="GetPalletInfoSoapOut">
     <wsdl:part name="parameters" element="tns:GetPalletInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="IsOrderPostedSoapIn">
+    <wsdl:part name="parameters" element="tns:IsOrderPosted" />
+  </wsdl:message>
+  <wsdl:message name="IsOrderPostedSoapOut">
+    <wsdl:part name="parameters" element="tns:IsOrderPostedResponse" />
+  </wsdl:message>
   <wsdl:portType name="IntegrationtoNAVSoap">
     <wsdl:operation name="Login">
       <wsdl:input message="tns:LoginSoapIn" />
@@ -365,6 +387,10 @@
     <wsdl:operation name="GetPalletInfo">
       <wsdl:input message="tns:GetPalletInfoSoapIn" />
       <wsdl:output message="tns:GetPalletInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsOrderPosted">
+      <wsdl:input message="tns:IsOrderPostedSoapIn" />
+      <wsdl:output message="tns:IsOrderPostedSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="IntegrationtoNAVSoap" type="tns:IntegrationtoNAVSoap">
@@ -477,6 +503,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="IsOrderPosted">
+      <soap:operation soapAction="http://tempuri.org/IsOrderPosted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="IntegrationtoNAVSoap12" type="tns:IntegrationtoNAVSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -581,6 +616,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetPalletInfo">
       <soap12:operation soapAction="http://tempuri.org/GetPalletInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsOrderPosted">
+      <soap12:operation soapAction="http://tempuri.org/IsOrderPosted" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

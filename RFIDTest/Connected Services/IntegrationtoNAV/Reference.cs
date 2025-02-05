@@ -894,6 +894,13 @@ namespace RFIDTest.IntegrationtoNAV {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPalletInfo", ReplyAction="*")]
         System.Threading.Tasks.Task<RFIDTest.IntegrationtoNAV.GetPalletInfoResponse> GetPalletInfoAsync(RFIDTest.IntegrationtoNAV.GetPalletInfoRequest request);
+        
+        // CODEGEN: Generating message contract since element name APIKEY from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IsOrderPosted", ReplyAction="*")]
+        RFIDTest.IntegrationtoNAV.IsOrderPostedResponse IsOrderPosted(RFIDTest.IntegrationtoNAV.IsOrderPostedRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IsOrderPosted", ReplyAction="*")]
+        System.Threading.Tasks.Task<RFIDTest.IntegrationtoNAV.IsOrderPostedResponse> IsOrderPostedAsync(RFIDTest.IntegrationtoNAV.IsOrderPostedRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1725,6 +1732,82 @@ namespace RFIDTest.IntegrationtoNAV {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class IsOrderPostedRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IsOrderPosted", Namespace="http://tempuri.org/", Order=0)]
+        public RFIDTest.IntegrationtoNAV.IsOrderPostedRequestBody Body;
+        
+        public IsOrderPostedRequest() {
+        }
+        
+        public IsOrderPostedRequest(RFIDTest.IntegrationtoNAV.IsOrderPostedRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class IsOrderPostedRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string APIKEY;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string projectName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string orderNo;
+        
+        public IsOrderPostedRequestBody() {
+        }
+        
+        public IsOrderPostedRequestBody(string APIKEY, string projectName, string orderNo) {
+            this.APIKEY = APIKEY;
+            this.projectName = projectName;
+            this.orderNo = orderNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class IsOrderPostedResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IsOrderPostedResponse", Namespace="http://tempuri.org/", Order=0)]
+        public RFIDTest.IntegrationtoNAV.IsOrderPostedResponseBody Body;
+        
+        public IsOrderPostedResponse() {
+        }
+        
+        public IsOrderPostedResponse(RFIDTest.IntegrationtoNAV.IsOrderPostedResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class IsOrderPostedResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public RFIDTest.IntegrationtoNAV.ExchangeResponse IsOrderPostedResult;
+        
+        public IsOrderPostedResponseBody() {
+        }
+        
+        public IsOrderPostedResponseBody(RFIDTest.IntegrationtoNAV.ExchangeResponse IsOrderPostedResult) {
+            this.IsOrderPostedResult = IsOrderPostedResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IntegrationtoNAVSoapChannel : RFIDTest.IntegrationtoNAV.IntegrationtoNAVSoap, System.ServiceModel.IClientChannel {
     }
@@ -2059,6 +2142,35 @@ namespace RFIDTest.IntegrationtoNAV {
             inValue.Body.projectName = projectName;
             inValue.Body.palletNo = palletNo;
             return ((RFIDTest.IntegrationtoNAV.IntegrationtoNAVSoap)(this)).GetPalletInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        RFIDTest.IntegrationtoNAV.IsOrderPostedResponse RFIDTest.IntegrationtoNAV.IntegrationtoNAVSoap.IsOrderPosted(RFIDTest.IntegrationtoNAV.IsOrderPostedRequest request) {
+            return base.Channel.IsOrderPosted(request);
+        }
+        
+        public RFIDTest.IntegrationtoNAV.ExchangeResponse IsOrderPosted(string APIKEY, string projectName, string orderNo) {
+            RFIDTest.IntegrationtoNAV.IsOrderPostedRequest inValue = new RFIDTest.IntegrationtoNAV.IsOrderPostedRequest();
+            inValue.Body = new RFIDTest.IntegrationtoNAV.IsOrderPostedRequestBody();
+            inValue.Body.APIKEY = APIKEY;
+            inValue.Body.projectName = projectName;
+            inValue.Body.orderNo = orderNo;
+            RFIDTest.IntegrationtoNAV.IsOrderPostedResponse retVal = ((RFIDTest.IntegrationtoNAV.IntegrationtoNAVSoap)(this)).IsOrderPosted(inValue);
+            return retVal.Body.IsOrderPostedResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<RFIDTest.IntegrationtoNAV.IsOrderPostedResponse> RFIDTest.IntegrationtoNAV.IntegrationtoNAVSoap.IsOrderPostedAsync(RFIDTest.IntegrationtoNAV.IsOrderPostedRequest request) {
+            return base.Channel.IsOrderPostedAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<RFIDTest.IntegrationtoNAV.IsOrderPostedResponse> IsOrderPostedAsync(string APIKEY, string projectName, string orderNo) {
+            RFIDTest.IntegrationtoNAV.IsOrderPostedRequest inValue = new RFIDTest.IntegrationtoNAV.IsOrderPostedRequest();
+            inValue.Body = new RFIDTest.IntegrationtoNAV.IsOrderPostedRequestBody();
+            inValue.Body.APIKEY = APIKEY;
+            inValue.Body.projectName = projectName;
+            inValue.Body.orderNo = orderNo;
+            return ((RFIDTest.IntegrationtoNAV.IntegrationtoNAVSoap)(this)).IsOrderPostedAsync(inValue);
         }
     }
 }
