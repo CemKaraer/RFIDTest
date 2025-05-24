@@ -104,7 +104,7 @@
     <None Include="Connected Services\IntegrationtoNAV\RFIDTest.IntegrationtoNAV.UpdateResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\IntegrationtoNAV\service.wsdl" />
+    <None Include="Connected Services\IntegrationtoNAV\service1.wsdl" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -112,9 +112,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\IntegrationtoNAV\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\IntegrationtoNAV\service.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\IntegrationtoNAV\configuration91.svcinfo" />
@@ -127,6 +124,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\IntegrationtoNAV\service1.disco" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="t9sB2rm7sHUBSuZF1hCrNQz3FXLYvA/FjaFgONAKWY4=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="QLhApnPCS3Z6NtwFszK97MP/qsm5U4G7278fuIMrNuQ=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="IntegrationtoNAVSoap">
       <properties>
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="IntegrationtoNAVSoap" contract="IntegrationtoNAV.IntegrationtoNAVSoap" bindingType="basicHttpBinding" address="https://mtnav.guzelenerji.com.tr/service.asmx" bindingConfiguration="IntegrationtoNAVSoap">
+    <endpoint name="IntegrationtoNAVSoap" contract="IntegrationtoNAV.IntegrationtoNAVSoap" bindingType="basicHttpBinding" address="https://mtnavtest.guzelenerji.com.tr/service.asmx" bindingConfiguration="IntegrationtoNAVSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://mtnav.guzelenerji.com.tr/service.asmx</serializedValue>
+          <serializedValue>https://mtnavtest.guzelenerji.com.tr/service.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

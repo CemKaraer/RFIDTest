@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://mtnav.guzelenerji.com.tr/service.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://mtnavtest.guzelenerji.com.tr/service.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.disco" MetadataType="Disco" ID="abe5f1d0-fca5-43c2-8ac0-6a8ad887d4f8" SourceId="1" SourceUrl="https://mtnav.guzelenerji.com.tr/service.asmx?disco" />
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="1f074b64-0036-44c1-b82a-8e1da19f8771" SourceId="1" SourceUrl="https://mtnav.guzelenerji.com.tr/service.asmx?wsdl" />
+    <MetadataFile FileName="service1.disco" MetadataType="Disco" ID="03b072d8-cb6d-4f8e-b419-c374b5fb1dd4" SourceId="1" SourceUrl="https://mtnavtest.guzelenerji.com.tr/service.asmx?disco" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="8cc296d9-c3ae-4436-a9eb-65c2a52af784" SourceId="1" SourceUrl="https://mtnavtest.guzelenerji.com.tr/service.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -13,6 +13,7 @@
       <s:complexType name="ExchangeRequest">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ERPUserID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
@@ -31,13 +32,22 @@
           <s:element minOccurs="0" maxOccurs="1" name="Sql" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="BCResource" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="IsCount" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSingleResult" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="SQLParameterPairs" type="tns:ArrayOfSQLParameterPair" />
           <s:element minOccurs="1" maxOccurs="1" name="PartitionNumber" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="PartitionSet" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Zip" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnCSV" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnJSON" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnFlatCSV" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="OperationName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Base64EncodedString" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BCTopSkip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Separator" type="s1:char" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfSQLParameterPair">
@@ -635,10 +645,10 @@
   </wsdl:binding>
   <wsdl:service name="IntegrationtoNAV">
     <wsdl:port name="IntegrationtoNAVSoap" binding="tns:IntegrationtoNAVSoap">
-      <soap:address location="https://mtnav.guzelenerji.com.tr/service.asmx" />
+      <soap:address location="https://mtnavtest.guzelenerji.com.tr/service.asmx" />
     </wsdl:port>
     <wsdl:port name="IntegrationtoNAVSoap12" binding="tns:IntegrationtoNAVSoap12">
-      <soap12:address location="https://mtnav.guzelenerji.com.tr/service.asmx" />
+      <soap12:address location="https://mtnavtest.guzelenerji.com.tr/service.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

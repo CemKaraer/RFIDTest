@@ -26,6 +26,9 @@ namespace RFIDTest.IntegrationtoNAV {
         private string UserNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ERPUserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -77,6 +80,8 @@ namespace RFIDTest.IntegrationtoNAV {
         
         private bool IsCountField;
         
+        private bool IsSingleResultField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private RFIDTest.IntegrationtoNAV.SQLParameterPair[] SQLParameterPairsField;
         
@@ -86,6 +91,12 @@ namespace RFIDTest.IntegrationtoNAV {
         
         private bool ZipField;
         
+        private bool ReturnCSVField;
+        
+        private bool ReturnJSONField;
+        
+        private bool ReturnFlatCSVField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OperationNameField;
         
@@ -94,6 +105,20 @@ namespace RFIDTest.IntegrationtoNAV {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string Base64EncodedStringField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BCTopSkipField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ConnectionStringField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string APIKeyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProjectNameField;
+        
+        private char SeparatorField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -119,6 +144,19 @@ namespace RFIDTest.IntegrationtoNAV {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string ERPUserID {
+            get {
+                return this.ERPUserIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ERPUserIDField, value) != true)) {
+                    this.ERPUserIDField = value;
+                    this.RaisePropertyChanged("ERPUserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public string Password {
             get {
                 return this.PasswordField;
@@ -131,7 +169,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string NewPassword {
             get {
                 return this.NewPasswordField;
@@ -144,7 +182,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string CompanyName {
             get {
                 return this.CompanyNameField;
@@ -157,7 +195,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string BCCompanyId {
             get {
                 return this.BCCompanyIdField;
@@ -170,7 +208,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public string LocationCode {
             get {
                 return this.LocationCodeField;
@@ -183,7 +221,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string ZoneCode {
             get {
                 return this.ZoneCodeField;
@@ -196,7 +234,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string DeviceID {
             get {
                 return this.DeviceIDField;
@@ -209,7 +247,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public string IP {
             get {
                 return this.IPField;
@@ -222,7 +260,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public string AppVersion {
             get {
                 return this.AppVersionField;
@@ -235,7 +273,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
         public int VersionNumber {
             get {
                 return this.VersionNumberField;
@@ -248,7 +286,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
         public string DeviceDescription {
             get {
                 return this.DeviceDescriptionField;
@@ -261,7 +299,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
         public string ProjectKey {
             get {
                 return this.ProjectKeyField;
@@ -274,7 +312,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
         public string FriendlyName {
             get {
                 return this.FriendlyNameField;
@@ -287,7 +325,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
         public string Language {
             get {
                 return this.LanguageField;
@@ -300,7 +338,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
         public string SqlType {
             get {
                 return this.SqlTypeField;
@@ -313,7 +351,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
         public string Sql {
             get {
                 return this.SqlField;
@@ -326,7 +364,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
         public string BCResource {
             get {
                 return this.BCResourceField;
@@ -339,7 +377,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
         public bool IsCount {
             get {
                 return this.IsCountField;
@@ -352,7 +390,20 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        public bool IsSingleResult {
+            get {
+                return this.IsSingleResultField;
+            }
+            set {
+                if ((this.IsSingleResultField.Equals(value) != true)) {
+                    this.IsSingleResultField = value;
+                    this.RaisePropertyChanged("IsSingleResult");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
         public RFIDTest.IntegrationtoNAV.SQLParameterPair[] SQLParameterPairs {
             get {
                 return this.SQLParameterPairsField;
@@ -365,7 +416,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
         public int PartitionNumber {
             get {
                 return this.PartitionNumberField;
@@ -378,7 +429,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
         public int PartitionSet {
             get {
                 return this.PartitionSetField;
@@ -391,7 +442,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
         public bool Zip {
             get {
                 return this.ZipField;
@@ -404,7 +455,46 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
+        public bool ReturnCSV {
+            get {
+                return this.ReturnCSVField;
+            }
+            set {
+                if ((this.ReturnCSVField.Equals(value) != true)) {
+                    this.ReturnCSVField = value;
+                    this.RaisePropertyChanged("ReturnCSV");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=26)]
+        public bool ReturnJSON {
+            get {
+                return this.ReturnJSONField;
+            }
+            set {
+                if ((this.ReturnJSONField.Equals(value) != true)) {
+                    this.ReturnJSONField = value;
+                    this.RaisePropertyChanged("ReturnJSON");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=27)]
+        public bool ReturnFlatCSV {
+            get {
+                return this.ReturnFlatCSVField;
+            }
+            set {
+                if ((this.ReturnFlatCSVField.Equals(value) != true)) {
+                    this.ReturnFlatCSVField = value;
+                    this.RaisePropertyChanged("ReturnFlatCSV");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
         public string OperationName {
             get {
                 return this.OperationNameField;
@@ -417,7 +507,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=29)]
         public string XML {
             get {
                 return this.XMLField;
@@ -430,7 +520,7 @@ namespace RFIDTest.IntegrationtoNAV {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=30)]
         public string Base64EncodedString {
             get {
                 return this.Base64EncodedStringField;
@@ -439,6 +529,71 @@ namespace RFIDTest.IntegrationtoNAV {
                 if ((object.ReferenceEquals(this.Base64EncodedStringField, value) != true)) {
                     this.Base64EncodedStringField = value;
                     this.RaisePropertyChanged("Base64EncodedString");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=31)]
+        public string BCTopSkip {
+            get {
+                return this.BCTopSkipField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BCTopSkipField, value) != true)) {
+                    this.BCTopSkipField = value;
+                    this.RaisePropertyChanged("BCTopSkip");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=32)]
+        public string ConnectionString {
+            get {
+                return this.ConnectionStringField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ConnectionStringField, value) != true)) {
+                    this.ConnectionStringField = value;
+                    this.RaisePropertyChanged("ConnectionString");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=33)]
+        public string APIKey {
+            get {
+                return this.APIKeyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.APIKeyField, value) != true)) {
+                    this.APIKeyField = value;
+                    this.RaisePropertyChanged("APIKey");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=34)]
+        public string ProjectName {
+            get {
+                return this.ProjectNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectNameField, value) != true)) {
+                    this.ProjectNameField = value;
+                    this.RaisePropertyChanged("ProjectName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=35)]
+        public char Separator {
+            get {
+                return this.SeparatorField;
+            }
+            set {
+                if ((this.SeparatorField.Equals(value) != true)) {
+                    this.SeparatorField = value;
+                    this.RaisePropertyChanged("Separator");
                 }
             }
         }
